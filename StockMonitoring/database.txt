@@ -1,0 +1,19 @@
+﻿https://docs.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=visual-studio
+
+
+https://docs.microsoft.com/en-us/ef/core/modeling/keys?tabs=data-annotations
+
+
+https://docs.microsoft.com/en-us/dotnet/desktop/winforms/controls/how-to-bind-data-to-the-windows-forms-datagridview-control?view=netframeworkdesktop-4.8
+
+
+
+For IDE
+scaffold-DbContext "Server=192.168.1.233\SQLEXPRESS,1433 ;user id=Admin;password=Admin; Database =Production;"Microsoft.EntityFrameworkCore.SqlServer -o Models\db 
+
+
+Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=WGR;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models\dblocal 
+
+
+
+Scaffold-DbContext "Server=182.52.108.173\SQLEXPRESS,10000;Database=WGR;user id=Admin;password=Admin;" Microsoft.EntityFrameworkCore.SqlServer -o Models\dblocal -f
