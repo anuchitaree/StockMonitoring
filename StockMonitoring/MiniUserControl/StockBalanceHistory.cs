@@ -92,6 +92,8 @@ namespace StockMonitoring.MiniUserControl
                                        Balance = log.Balance
                                    }).ToList();
 
+                    var balance1 = balance.OrderByDescending(d => d.Registdatetime).ToList();
+
                     //var balance = (from log in db.StockListLogs
                     //               where log.Registdatetime >= dts && log.Registdatetime <= dte
                     //               select new StockListLogRequest
@@ -107,7 +109,7 @@ namespace StockMonitoring.MiniUserControl
 
                    
                     int i = 1;
-                    foreach (StockListLogRequest s in balance)
+                    foreach (StockListLogRequest s in balance1)
                     {
                         DgvHistory.Rows.Add(i, s.SectionCode, s.Registdatetime.ToString("yyyy-MM-dd HH:mm:ss"), s.PartNumber, s.Balance);
                         i++;

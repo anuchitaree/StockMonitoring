@@ -59,6 +59,7 @@ namespace StockMonitoring.MiniUserControl
             this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(100, 27);
             this.Password.TabIndex = 6;
+            this.Password.Text = "123456";
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Password_KeyPress);
             // 
@@ -70,6 +71,7 @@ namespace StockMonitoring.MiniUserControl
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(100, 27);
             this.Username.TabIndex = 7;
+            this.Username.Text = "6000774";
             this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Username.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Username_KeyPress);
             // 
@@ -80,6 +82,7 @@ namespace StockMonitoring.MiniUserControl
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 27);
             this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "4320";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 

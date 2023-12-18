@@ -47,6 +47,7 @@ namespace StockMonitoring.MiniUserControl
             this.BtnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.Tblen = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,10 +194,21 @@ namespace StockMonitoring.MiniUserControl
             this.Tblen.TabIndex = 5;
             this.Tblen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.IndianRed;
+            this.label7.Location = new System.Drawing.Point(10, 307);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(216, 15);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Restart application after update pattern.";
+            // 
             // PatternUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Tblen);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnSave);
@@ -213,7 +225,7 @@ namespace StockMonitoring.MiniUserControl
             this.Controls.Add(this.TbTotal);
             this.Controls.Add(this.label1);
             this.Name = "PatternUserControl";
-            this.Size = new System.Drawing.Size(307, 309);
+            this.Size = new System.Drawing.Size(307, 328);
             this.Load += new System.EventHandler(this.PatternUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -239,5 +251,6 @@ namespace StockMonitoring.MiniUserControl
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Tblen;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -74,7 +74,7 @@ namespace StockMonitoring.MiniUserControl
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(75, 42);
             this.BtnUpdate.TabIndex = 2;
-            this.BtnUpdate.Text = "Edit";
+            this.BtnUpdate.Text = "Save";
             this.BtnUpdate.UseVisualStyleBackColor = true;
             this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 

@@ -47,6 +47,7 @@ namespace StockMonitoring
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.BtnTest2 = new System.Windows.Forms.Button();
             this.LbSetting4 = new System.Windows.Forms.TextBox();
             this.TbRaw4 = new System.Windows.Forms.TextBox();
@@ -100,7 +101,6 @@ namespace StockMonitoring
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -267,10 +267,20 @@ namespace StockMonitoring
             this.groupBox1.Controls.Add(this.Message3);
             this.groupBox1.Location = new System.Drawing.Point(3, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 599);
+            this.groupBox1.Size = new System.Drawing.Size(388, 599);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "QR scanner setting";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(85, 328);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(20, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // BtnTest2
             // 
@@ -287,14 +297,14 @@ namespace StockMonitoring
             this.LbSetting4.Location = new System.Drawing.Point(67, 274);
             this.LbSetting4.Name = "LbSetting4";
             this.LbSetting4.ReadOnly = true;
-            this.LbSetting4.Size = new System.Drawing.Size(165, 23);
+            this.LbSetting4.Size = new System.Drawing.Size(315, 23);
             this.LbSetting4.TabIndex = 7;
             // 
             // TbRaw4
             // 
             this.TbRaw4.Location = new System.Drawing.Point(67, 303);
             this.TbRaw4.Name = "TbRaw4";
-            this.TbRaw4.Size = new System.Drawing.Size(165, 23);
+            this.TbRaw4.Size = new System.Drawing.Size(315, 23);
             this.TbRaw4.TabIndex = 7;
             // 
             // BtnTest
@@ -323,14 +333,14 @@ namespace StockMonitoring
             this.LbSetting3.Location = new System.Drawing.Point(67, 188);
             this.LbSetting3.Name = "LbSetting3";
             this.LbSetting3.ReadOnly = true;
-            this.LbSetting3.Size = new System.Drawing.Size(165, 23);
+            this.LbSetting3.Size = new System.Drawing.Size(315, 23);
             this.LbSetting3.TabIndex = 7;
             // 
             // TbRaw3
             // 
             this.TbRaw3.Location = new System.Drawing.Point(67, 217);
             this.TbRaw3.Name = "TbRaw3";
-            this.TbRaw3.Size = new System.Drawing.Size(165, 23);
+            this.TbRaw3.Size = new System.Drawing.Size(315, 23);
             this.TbRaw3.TabIndex = 7;
             // 
             // LbSetting2
@@ -338,14 +348,14 @@ namespace StockMonitoring
             this.LbSetting2.Location = new System.Drawing.Point(67, 103);
             this.LbSetting2.Name = "LbSetting2";
             this.LbSetting2.ReadOnly = true;
-            this.LbSetting2.Size = new System.Drawing.Size(165, 23);
+            this.LbSetting2.Size = new System.Drawing.Size(315, 23);
             this.LbSetting2.TabIndex = 7;
             // 
             // TbRaw2
             // 
             this.TbRaw2.Location = new System.Drawing.Point(67, 131);
             this.TbRaw2.Name = "TbRaw2";
-            this.TbRaw2.Size = new System.Drawing.Size(165, 23);
+            this.TbRaw2.Size = new System.Drawing.Size(315, 23);
             this.TbRaw2.TabIndex = 7;
             // 
             // label5
@@ -362,14 +372,14 @@ namespace StockMonitoring
             this.LbSetting1.Location = new System.Drawing.Point(67, 17);
             this.LbSetting1.Name = "LbSetting1";
             this.LbSetting1.ReadOnly = true;
-            this.LbSetting1.Size = new System.Drawing.Size(165, 23);
+            this.LbSetting1.Size = new System.Drawing.Size(315, 23);
             this.LbSetting1.TabIndex = 7;
             // 
             // TbRaw1
             // 
             this.TbRaw1.Location = new System.Drawing.Point(67, 44);
             this.TbRaw1.Name = "TbRaw1";
-            this.TbRaw1.Size = new System.Drawing.Size(165, 23);
+            this.TbRaw1.Size = new System.Drawing.Size(315, 23);
             this.TbRaw1.TabIndex = 7;
             // 
             // label6
@@ -487,7 +497,7 @@ namespace StockMonitoring
             this.dataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(657, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -676,14 +686,14 @@ namespace StockMonitoring
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(244, 648);
+            this.panel1.Size = new System.Drawing.Size(394, 648);
             this.panel1.TabIndex = 18;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(687, 261);
+            this.button1.Location = new System.Drawing.Point(819, 304);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 72);
+            this.button1.Size = new System.Drawing.Size(34, 29);
             this.button1.TabIndex = 18;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -693,7 +703,7 @@ namespace StockMonitoring
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 400F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 1, 0);
@@ -701,7 +711,7 @@ namespace StockMonitoring
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(660, 654);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(813, 654);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // panel3
@@ -711,9 +721,9 @@ namespace StockMonitoring
             this.panel3.Controls.Add(this.DgvShow);
             this.panel3.Controls.Add(this.PnlSub);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(253, 3);
+            this.panel3.Location = new System.Drawing.Point(403, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(404, 648);
+            this.panel3.Size = new System.Drawing.Size(407, 648);
             this.panel3.TabIndex = 21;
             // 
             // label11
@@ -725,21 +735,11 @@ namespace StockMonitoring
             this.label11.TabIndex = 20;
             this.label11.Text = "StockList";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(85, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 684);
+            this.ClientSize = new System.Drawing.Size(818, 684);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -748,7 +748,7 @@ namespace StockMonitoring
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Stock Balance By PED  Version S.2821  [Anuchit 080-916-5195]";
+            this.Text = "Stock Balance By PED  Version S.2822";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);

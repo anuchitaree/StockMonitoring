@@ -419,6 +419,8 @@ namespace StockMonitoring
                 if (!String.IsNullOrEmpty(ReadingText1))
                 {
                     ReadingText1 = ReadingText1.Trim('\r');
+
+                   
                 }
             }
             catch (Exception)
@@ -502,7 +504,12 @@ namespace StockMonitoring
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            TbRaw1.Text = ReadingText1;
+            if (ReadingText1 != null)
+            {
+                TbRaw1.Text = ReadingText1;
+
+            }
+
             if (Parameter.User != null && ReadingText1 != null && ReadingText1 != "")
             {
                 if (Parameter.Permition == "on" && ReadingText1.Length == Parameter.Patterns.TotalLength)
@@ -510,7 +517,7 @@ namespace StockMonitoring
                     ReadingText1 = ReadingText1.Substring(Parameter.Patterns.Start, Parameter.Patterns.Length);
                     AsyncInsertTable1(ReadingText1);
                 }
-                Message1.Text = String.Format("Count: {0} ,PartNUmber: {1}", Counter1, ReadingText1);
+                Message1.Text = String.Format("Count: {0} ,P/N : {1}", Counter1, ReadingText1);
                 ReadingText1 = null;
             }
             timer1.Enabled = true;
@@ -519,7 +526,12 @@ namespace StockMonitoring
         private void timer2_Tick(object sender, EventArgs e)
         {
             timer2.Enabled = false;
-            TbRaw2.Text = ReadingText2;
+            if (ReadingText2 != null)
+            {
+                TbRaw2.Text = ReadingText2;
+
+            }
+
             if (Parameter.User != null && ReadingText2 != null && ReadingText2 != "")
             {
                 if (Parameter.Permition == "on" && ReadingText2.Length == Parameter.Patterns.TotalLength)
@@ -527,7 +539,7 @@ namespace StockMonitoring
                     ReadingText2 = ReadingText2.Substring(Parameter.Patterns.Start, Parameter.Patterns.Length);
                     AsyncInsertTable2(ReadingText2);
                 }
-                Message2.Text = String.Format("Count: {0} ,PartNUmber: {1}", Counter2, ReadingText2);
+                Message2.Text = String.Format("Count: {0} ,P/N : {1}", Counter2, ReadingText2);
                 ReadingText2 = null;
             }
             timer2.Enabled = true;
@@ -536,7 +548,10 @@ namespace StockMonitoring
         private void timer3_Tick(object sender, EventArgs e)
         {
             timer3.Enabled = false;
-            TbRaw3.Text = ReadingText3;
+
+            if (ReadingText3 != null)
+                TbRaw3.Text = ReadingText3;
+
             if (Parameter.User != null && ReadingText3 != null && ReadingText3 != "")
             {
                 if (Parameter.Permition == "on" && ReadingText3.Length == Parameter.Patterns.TotalLength)
@@ -544,7 +559,7 @@ namespace StockMonitoring
                     ReadingText3 = ReadingText3.Substring(Parameter.Patterns.Start, Parameter.Patterns.Length);
                     AsyncInsertTable3(ReadingText3);
                 }
-                Message3.Text = String.Format("Count: {0} ,PartNUmber: {1}", Counter3, ReadingText3);
+                Message3.Text = String.Format("Count: {0} ,P/N : {1}", Counter3, ReadingText3);
                 ReadingText3 = null;
             }
             timer3.Enabled = true;
@@ -553,7 +568,10 @@ namespace StockMonitoring
         private void timer4_Tick(object sender, EventArgs e)
         {
             timer4.Enabled = false;
-            TbRaw4.Text = ReadingText4;
+
+            if (ReadingText4 != null)
+                TbRaw4.Text = ReadingText4;
+
             if (Parameter.User != null && ReadingText4 != null && ReadingText4 != "")
             {
                 if (Parameter.Permition == "on" && ReadingText4.Length == Parameter.Patterns.TotalLength)
@@ -561,7 +579,7 @@ namespace StockMonitoring
                     ReadingText4 = ReadingText4.Substring(Parameter.Patterns.Start, Parameter.Patterns.Length);
                     AsyncInsertTable4(ReadingText4);
                 }
-                Message4.Text = String.Format("Count: {0} ,PartNUmber: {1}", Counter4, ReadingText4);
+                Message4.Text = String.Format("Count: {0} ,P/N : {1}", Counter4, ReadingText4);
                 ReadingText4 = null;
             }
             timer4.Enabled = true;
