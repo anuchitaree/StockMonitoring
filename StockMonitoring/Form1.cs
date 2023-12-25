@@ -133,14 +133,14 @@ namespace StockMonitoring
         void Thread1(object obj)
         {
             CancellationToken token = (CancellationToken)obj;
-            Thread.Sleep(1000);
+            Thread.Sleep(100);
             while (!token.IsCancellationRequested)
             {
                 if (Parameter.User != null)
 
                     TakeStorageDataToSQL();
 
-                Thread.Sleep(10000); // 10 sec
+                Thread.Sleep(100); // 10 sec
             }
         }
 
@@ -171,7 +171,7 @@ namespace StockMonitoring
             while (!token.IsCancellationRequested)
             {
                 ShowStockBalance();
-                Thread.Sleep(10000);
+                Thread.Sleep(200);
             }
         }
 
@@ -753,7 +753,10 @@ namespace StockMonitoring
                                 Qty = s.Sum(a => a.PiecePerKanban)
                             }).ToList();
 
+                        //var PartQty = record.
+                        //    OrderBy(x=>x.RegistDate).ToList();
 
+                        // เอาข้อมูลจาก บานข้อมูลปัจจุบัน
                         var stocklist = db.StockLists.Where(s => s.SectionCode == st.Sectioncode)
                             .Select(s => new StockListOnly
                             {
