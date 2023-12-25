@@ -80,6 +80,7 @@ namespace StockMonitoring.MiniUserControl
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(117, 46);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 27);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "4320";

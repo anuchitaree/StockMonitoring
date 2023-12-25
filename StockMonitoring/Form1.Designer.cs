@@ -748,7 +748,7 @@ namespace StockMonitoring
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Stock Balance By PED  Version S.2822";
+            this.Text = "Stock Balance By DIAT DX  Version S.2822";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
