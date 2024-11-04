@@ -96,8 +96,8 @@ namespace StockMonitoring
                     }
                     if (master.Count == 0)
                     {
-                        string str = "No Master data, You input wrong the your SECTION-CODE \n";
-                        str += "althrough you log-in sucessed,the information will NOT send to DB \n";
+                        string str = "ไม่มีข้อมูลในตาราง StockLists กรุณาใช้ section-code เดียวกันกับที่ลงทะเบียนไว้ \n";
+                        //str += "althrough you log-in sucessed,the information will NOT send to DB \n";
                         MessageBox.Show(str, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Parameter.ErrorLoadFile = true;
                     }
@@ -420,7 +420,7 @@ namespace StockMonitoring
                 {
                     ReadingText1 = ReadingText1.Trim('\r');
 
-                   
+
                 }
             }
             catch (Exception)
@@ -482,7 +482,6 @@ namespace StockMonitoring
         private static void DataReceivedHandler4(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
-            //ReadingText4 = sp.ReadExisting().Trim('\r');
             try
             {
                 ReadingText4 = sp.ReadExisting();
@@ -1177,10 +1176,10 @@ namespace StockMonitoring
                 await File.WriteAllTextAsync(filename, data);
                 //}
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.ToString());
             }
         }
         private async void BtnTest2_Click(object sender, EventArgs e)
@@ -1202,10 +1201,11 @@ namespace StockMonitoring
                 await File.WriteAllTextAsync(filename, data);
                 //}
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.ToString());
+
             }
         }
 
@@ -1236,6 +1236,7 @@ namespace StockMonitoring
             dataGridView2.Columns[2].Name = "Balance";
             dataGridView2.Columns[2].Width = 100;
             dataGridView2.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dataGridView2.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dataGridView2.RowHeadersWidth = 4;
             dataGridView2.DefaultCellStyle.Font = new Font("Tahoma", 9);
@@ -1248,6 +1249,42 @@ namespace StockMonitoring
             dataGridView2.AllowUserToResizeColumns = false;
         }
 
-       
+        private void BtnInitPN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var stocklist = new StockList()
+                {
+                    SectionCode = "4320",
+                    PartNumber = "TG100000-1000",
+                    PiecePerKanban = 3,
+                    Balance = 0,
+                    Hhlimit = 1000,
+                    Hlimit = 990,
+                    Llimit = 100,
+                    Lllimt = 50,
+                    ActivePn = true
+                };
+                using (var db = new WGRContext())
+                {
+                    var result = db.StockLists.Any(x=>x.PartNumber==stocklist.PartNumber);
+                    if (result == false)
+                    {
+                        db.StockLists.Add(stocklist);
+                        db.SaveChanges();
+                    }
+
+                  
+
+                }
+
+
+            }
+            catch
+            {
+
+                MessageBox.Show("Cannot connect DB", "Error");
+            }
+        }
     }
 }
