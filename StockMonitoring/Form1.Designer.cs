@@ -47,6 +47,21 @@ namespace StockMonitoring
             richTextBox1 = new System.Windows.Forms.RichTextBox();
             label1 = new System.Windows.Forms.Label();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            btnCreate = new System.Windows.Forms.Button();
+            txtPartnumber = new System.Windows.Forms.TextBox();
+            txtpice = new System.Windows.Forms.TextBox();
+            txtLL = new System.Windows.Forms.TextBox();
+            txtL = new System.Windows.Forms.TextBox();
+            txtH = new System.Windows.Forms.TextBox();
+            txtHH = new System.Windows.Forms.TextBox();
+            txtSection = new System.Windows.Forms.TextBox();
+            label17 = new System.Windows.Forms.Label();
+            label16 = new System.Windows.Forms.Label();
+            label15 = new System.Windows.Forms.Label();
+            label38 = new System.Windows.Forms.Label();
+            label14 = new System.Windows.Forms.Label();
+            label13 = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
             BtnInitPN = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
             BtnTest2 = new System.Windows.Forms.Button();
@@ -86,6 +101,7 @@ namespace StockMonitoring
             cH1ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             patternPartNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             createAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -218,7 +234,7 @@ namespace StockMonitoring
             // 
             richTextBox1.Location = new System.Drawing.Point(0, 513);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new System.Drawing.Size(232, 80);
+            richTextBox1.Size = new System.Drawing.Size(220, 80);
             richTextBox1.TabIndex = 9;
             richTextBox1.Text = "";
             // 
@@ -234,6 +250,21 @@ namespace StockMonitoring
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnCreate);
+            groupBox1.Controls.Add(txtPartnumber);
+            groupBox1.Controls.Add(txtpice);
+            groupBox1.Controls.Add(txtLL);
+            groupBox1.Controls.Add(txtL);
+            groupBox1.Controls.Add(txtH);
+            groupBox1.Controls.Add(txtHH);
+            groupBox1.Controls.Add(txtSection);
+            groupBox1.Controls.Add(label17);
+            groupBox1.Controls.Add(label16);
+            groupBox1.Controls.Add(label15);
+            groupBox1.Controls.Add(label38);
+            groupBox1.Controls.Add(label14);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(BtnInitPN);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(BtnTest2);
@@ -267,41 +298,188 @@ namespace StockMonitoring
             groupBox1.Controls.Add(Message2);
             groupBox1.Controls.Add(Message4);
             groupBox1.Controls.Add(Message3);
-            groupBox1.Location = new System.Drawing.Point(3, 43);
+            groupBox1.Location = new System.Drawing.Point(8, 42);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(388, 599);
+            groupBox1.Size = new System.Drawing.Size(394, 599);
             groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "QR scanner setting";
             // 
+            // btnCreate
+            // 
+            btnCreate.BackColor = System.Drawing.Color.FromArgb(255, 255, 128);
+            btnCreate.Location = new System.Drawing.Point(245, 569);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new System.Drawing.Size(133, 30);
+            btnCreate.TabIndex = 16;
+            btnCreate.Text = "Create patnumber";
+            btnCreate.UseVisualStyleBackColor = false;
+            btnCreate.Click += btnCreate_Click;
+            // 
+            // txtPartnumber
+            // 
+            txtPartnumber.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtPartnumber.Location = new System.Drawing.Point(228, 431);
+            txtPartnumber.Name = "txtPartnumber";
+            txtPartnumber.Size = new System.Drawing.Size(152, 23);
+            txtPartnumber.TabIndex = 15;
+            txtPartnumber.Text = "TG100000-1000";
+            txtPartnumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtpice
+            // 
+            txtpice.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtpice.Location = new System.Drawing.Point(323, 515);
+            txtpice.Name = "txtpice";
+            txtpice.Size = new System.Drawing.Size(55, 23);
+            txtpice.TabIndex = 15;
+            txtpice.Text = "3";
+            txtpice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtLL
+            // 
+            txtLL.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtLL.Location = new System.Drawing.Point(323, 486);
+            txtLL.Name = "txtLL";
+            txtLL.Size = new System.Drawing.Size(55, 23);
+            txtLL.TabIndex = 15;
+            txtLL.Text = "50";
+            txtLL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtL
+            // 
+            txtL.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtL.Location = new System.Drawing.Point(323, 457);
+            txtL.Name = "txtL";
+            txtL.Size = new System.Drawing.Size(55, 23);
+            txtL.TabIndex = 15;
+            txtL.Text = "100";
+            txtL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtH
+            // 
+            txtH.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtH.Location = new System.Drawing.Point(248, 481);
+            txtH.Name = "txtH";
+            txtH.Size = new System.Drawing.Size(55, 23);
+            txtH.TabIndex = 15;
+            txtH.Text = "980";
+            txtH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtHH
+            // 
+            txtHH.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtHH.Location = new System.Drawing.Point(248, 454);
+            txtHH.Name = "txtHH";
+            txtHH.Size = new System.Drawing.Size(55, 23);
+            txtHH.TabIndex = 15;
+            txtHH.Text = "1000";
+            txtHH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtSection
+            // 
+            txtSection.BackColor = System.Drawing.Color.FromArgb(255, 255, 192);
+            txtSection.Location = new System.Drawing.Point(278, 390);
+            txtSection.Name = "txtSection";
+            txtSection.Size = new System.Drawing.Size(100, 23);
+            txtSection.TabIndex = 15;
+            txtSection.Text = "4320";
+            txtSection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new System.Drawing.Point(309, 463);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(13, 15);
+            label17.TabIndex = 14;
+            label17.Text = "L";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new System.Drawing.Point(304, 487);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(19, 15);
+            label16.TabIndex = 14;
+            label16.Text = "LL";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(233, 484);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(16, 15);
+            label15.TabIndex = 14;
+            label15.Text = "H";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new System.Drawing.Point(291, 519);
+            label38.Name = "label38";
+            label38.Size = new System.Drawing.Size(26, 15);
+            label38.TabIndex = 14;
+            label38.Text = "size";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(226, 457);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(25, 15);
+            label14.TabIndex = 14;
+            label14.Text = "HH";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(226, 413);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(73, 15);
+            label13.TabIndex = 14;
+            label13.Text = "Part number";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(226, 393);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(46, 15);
+            label12.TabIndex = 14;
+            label12.Text = "Section";
+            // 
             // BtnInitPN
             // 
-            BtnInitPN.Location = new System.Drawing.Point(222, 382);
+            BtnInitPN.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            BtnInitPN.Location = new System.Drawing.Point(94, 332);
             BtnInitPN.Name = "BtnInitPN";
-            BtnInitPN.Size = new System.Drawing.Size(169, 23);
+            BtnInitPN.Size = new System.Drawing.Size(126, 23);
             BtnInitPN.TabIndex = 12;
             BtnInitPN.Text = "Initial TG100000-1000";
-            BtnInitPN.UseVisualStyleBackColor = true;
+            BtnInitPN.UseVisualStyleBackColor = false;
             BtnInitPN.Click += BtnInitPN_Click;
             // 
             // button2
             // 
-            button2.Location = new System.Drawing.Point(222, 411);
+            button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            button2.Location = new System.Drawing.Point(94, 361);
             button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(169, 23);
+            button2.Size = new System.Drawing.Size(126, 23);
             button2.TabIndex = 12;
             button2.Text = "Update stock balance";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // BtnTest2
             // 
-            BtnTest2.Location = new System.Drawing.Point(222, 469);
+            BtnTest2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            BtnTest2.Location = new System.Drawing.Point(228, 361);
             BtnTest2.Name = "BtnTest2";
-            BtnTest2.Size = new System.Drawing.Size(169, 23);
+            BtnTest2.Size = new System.Drawing.Size(160, 23);
             BtnTest2.TabIndex = 11;
             BtnTest2.Text = "ทดสอบ TG100000-1000 OUT";
-            BtnTest2.UseVisualStyleBackColor = true;
+            BtnTest2.UseVisualStyleBackColor = false;
             BtnTest2.Click += BtnTest2_Click;
             // 
             // LbSetting4
@@ -321,12 +499,13 @@ namespace StockMonitoring
             // 
             // BtnTest
             // 
-            BtnTest.Location = new System.Drawing.Point(222, 440);
+            BtnTest.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            BtnTest.Location = new System.Drawing.Point(228, 332);
             BtnTest.Name = "BtnTest";
-            BtnTest.Size = new System.Drawing.Size(169, 23);
+            BtnTest.Size = new System.Drawing.Size(160, 23);
             BtnTest.TabIndex = 8;
             BtnTest.Text = "ทดสอบ TG100000-1000 IN";
-            BtnTest.UseVisualStyleBackColor = true;
+            BtnTest.UseVisualStyleBackColor = false;
             BtnTest.Click += BtnTest_Click;
             // 
             // BtnRefresh
@@ -502,7 +681,7 @@ namespace StockMonitoring
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, toolToolStripMenuItem, loginToolStripMenuItem, logoutToolStripMenuItem, dataToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(818, 24);
+            menuStrip1.Size = new System.Drawing.Size(815, 24);
             menuStrip1.TabIndex = 14;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -523,7 +702,7 @@ namespace StockMonitoring
             // 
             // toolToolStripMenuItem
             // 
-            toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { qRScannerSettingToolStripMenuItem, toolStripMenuItem3, patternPartNumberToolStripMenuItem });
+            toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { qRScannerSettingToolStripMenuItem, toolStripMenuItem3, patternPartNumberToolStripMenuItem, helpToolStripMenuItem });
             toolToolStripMenuItem.Name = "toolToolStripMenuItem";
             toolToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             toolToolStripMenuItem.Text = "Tool";
@@ -579,6 +758,13 @@ namespace StockMonitoring
             patternPartNumberToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             patternPartNumberToolStripMenuItem.Text = "Pattern Part number ";
             patternPartNumberToolStripMenuItem.Click += patternPartNumberToolStripMenuItem_Click;
+            // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
             // loginToolStripMenuItem
             // 
@@ -664,7 +850,6 @@ namespace StockMonitoring
             DgvShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvShow.Location = new System.Drawing.Point(3, 21);
             DgvShow.Name = "DgvShow";
-            DgvShow.ReadOnly = true;
             DgvShow.RowTemplate.Height = 25;
             DgvShow.Size = new System.Drawing.Size(395, 309);
             DgvShow.TabIndex = 0;
@@ -682,7 +867,7 @@ namespace StockMonitoring
             // 
             // button1
             // 
-            button1.Location = new System.Drawing.Point(819, 304);
+            button1.Location = new System.Drawing.Point(954, 286);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(34, 29);
             button1.TabIndex = 18;
@@ -730,7 +915,7 @@ namespace StockMonitoring
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(818, 684);
+            ClientSize = new System.Drawing.Size(815, 684);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(menuStrip1);
@@ -739,7 +924,7 @@ namespace StockMonitoring
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             Name = "Form1";
-            Text = "Stock Balance By DIAT DX  Version S.2824";
+            Text = "Stock Balance By DIAT DX  Version 1.0  [04-Nov-2024]";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             Shown += Form1_Shown;
@@ -832,6 +1017,22 @@ namespace StockMonitoring
         private System.Windows.Forms.ToolStripMenuItem stockBalanceHistoryToolStripMenuItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BtnInitPN;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtPartnumber;
+        private System.Windows.Forms.TextBox txtLL;
+        private System.Windows.Forms.TextBox txtL;
+        private System.Windows.Forms.TextBox txtH;
+        private System.Windows.Forms.TextBox txtHH;
+        private System.Windows.Forms.TextBox txtSection;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.TextBox txtpice;
+        private System.Windows.Forms.Label label38;
     }
 }
 

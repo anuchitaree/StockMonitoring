@@ -6,6 +6,7 @@ using StockMonitoring.Models.dblocal;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -1267,14 +1268,14 @@ namespace StockMonitoring
                 };
                 using (var db = new WGRContext())
                 {
-                    var result = db.StockLists.Any(x=>x.PartNumber==stocklist.PartNumber);
+                    var result = db.StockLists.Any(x => x.PartNumber == stocklist.PartNumber);
                     if (result == false)
                     {
                         db.StockLists.Add(stocklist);
                         db.SaveChanges();
                     }
 
-                  
+
 
                 }
 
@@ -1284,6 +1285,95 @@ namespace StockMonitoring
             {
 
                 MessageBox.Show("Cannot connect DB", "Error");
+            }
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe", @"C:\Stock\install.txt");
+        }
+
+        private void bntCreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var stocklist = new StockList()
+                {
+                    SectionCode = "4320",
+                    PartNumber = "TG100000-1000",
+                    PiecePerKanban =3,
+                    Balance = 0,
+                    Hhlimit = 1000,
+                    Hlimit = 950,
+                    Llimit = 100,
+                    Lllimt = 50,
+                    ActivePn = true
+                };
+                using (var db = new WGRContext())
+                {
+                    var result = db.StockLists.Any(x => x.PartNumber == stocklist.PartNumber);
+                    if (result == false)
+                    {
+                        db.StockLists.Add(stocklist);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("มี Part number นี้ลงทะเบียนไว้แล้ว", "Error");
+                    }
+
+
+
+                }
+
+
+            }
+            catch
+            {
+
+                MessageBox.Show("โปรดตรวจสอบความถูกต้อง อีกครั้ง", "Error");
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var stocklist = new StockList()
+                {
+                    SectionCode = txtSection.Text.Trim(),
+                    PartNumber = txtPartnumber.Text.Trim(),
+                    PiecePerKanban = int.Parse(txtpice.Text),
+                    Balance = 0,
+                    Hhlimit = int.Parse(txtHH.Text),
+                    Hlimit = int.Parse(txtH.Text),
+                    Llimit = int.Parse(txtL.Text),
+                    Lllimt = int.Parse(txtLL.Text),
+                    ActivePn = true
+                };
+                using (var db = new WGRContext())
+                {
+                    var result = db.StockLists.Any(x => x.PartNumber == stocklist.PartNumber);
+                    if (result == false)
+                    {
+                        db.StockLists.Add(stocklist);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        MessageBox.Show("มี Part number นี้ลงทะเบียนไว้แล้ว", "Error");
+                    }
+
+
+
+                }
+
+
+            }
+            catch
+            {
+
+                MessageBox.Show("โปรดตรวจสอบความถูกต้อง อีกครั้ง", "Error");
             }
         }
     }
